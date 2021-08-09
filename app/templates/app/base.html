@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GESTOR DE PROYECTOS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+    {% load static%}
+    <link rel="stylesheet" href="{% static 'app/css/estilos.css' %}">
+    
+</head>
+<body>
+
+    
+    <header id="header">
+        <img class="menu" src="{% static 'app/img/menuiconwhite.png' %}" alt="menu" id="menu">
+        <div class="contenedor_logo">
+            <img  class="logo"  src="{% static 'app/img/is2.png' %}" alt="logo">
+        </div>
+
+        <div>
+            
+            <nav id="nav">
+                <ul>
+                    <li>
+                        <a href="C:/ProyectoIS2/poliproyecto/app/templates/app/home.html"> Inicio </a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">Seguridad</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">Proyecto</a>
+                    </li>
+                    <li>
+                        <a href="contacto.html">Desarrollo</a>
+                    </li>
+                    
+
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}"> cerrar sesión</a>
+                        </li>
+                        <li>
+                            <a href="#">@{{ user.username }}</a>
+                        </li>
+                        {% else %}
+                        <li>
+                             <a href="{% url 'login' %}">   cerrar sesión</a>
+                        </li>
+                    {% endif %}
+                    
+                </ul>
+            </nav>
+
+        </div>
+
+    </header>
+
+    <div id="contenido">
+
+            <div class="slider">
+                <div>
+                    <img src="{% static 'app/img/banner/banner--1.png' %}" alt="">
+                </div>
+                <div>
+                    <img src="{% static 'app/img/banner/banner--2.png' %}" alt="">
+                </div>
+                <div>
+                    <img src="{% static 'app/img/banner/banner-3.png' %}" alt="">
+                </div>
+            </div>
+
+       
+        
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="js/menu.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          $('.slider').bxSlider({
+              mode: 'fade',//horizontal, vertical, fade
+              auto: true,
+              pause: 2000
+          });
+        });
+    </script>
+
+</body>
+</html>
