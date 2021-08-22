@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>{{ title }}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--css -->
+	<link rel="stylesheet" type="text/css" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/component.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/home.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/lista.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/registro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/tablero.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}">
+    <!-- js-->
+    <script src="{% static '/js/classie.js' %}"></script>
+    <script src="{% static '/js/gnmenu.js' %}"></script>
+    <script src="{% static '/js/jquery.min.js' %}"></script>
+    <script src="{% static '/js/fontawesome.js' %}"></script>
+    <script src="{% static '/js/brands.js' %}"></script>
+    <script src="{% static '/js/solid.js' %}"></script>
+    <script src="{% static '/js/regular.js' %}"></script>
+    <script src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div class="container">
+        <ul id="gn-menu" class="gn-menu-main">
+            <li class="gn-trigger">
+                <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <li>
+                                {% if 'Ver Usuarios' in permisos or 'Ver Roles' in permisos or 'Ver Proyectos' in permisos or 'Ver Clientes' in permisos %}
+                                <i class="far fa-address-card" style="width: 60px"></i>Administracion
+                                <ul class="gn-submenu">
+                                    {% if 'Ver Usuarios' in permisos %}
+                                        <li><a href="/usuarios/"><i class="fas fa-arrow-right" style="width: 60px"></i>Usuarios</a></li>
+                                    {% endif %}
+                                    {% if 'Ver Roles' in permisos %}
+                                        <li><a href="/roles/"><i class="fas fa-arrow-right" style="width: 60px"></i>Roles</a></li>
+                                    {% endif %}
+                                    {% if 'Ver Proyectos' in permisos %}
+                                        <li><a href="/proyectos/"><i class="fas fa-arrow-right" style="width: 60px"></i>Proyectos</a></li>
+                                    {% endif %}
+                                    {% if 'Ver Clientes' in permisos %}
+                                        <li><a href="/clientes/"><i class="fas fa-arrow-right" style="width: 60px"></i>Clientes</a></li>
+                                    {% endif %}
+                                </ul>
+                                {% endif %}
+                            </li>
+                            {% if 'Ver Definiciones de Proyectos' in permisos %}
+                                <li><a href="/proyectos/definiciones/"><i class="fas fa-cogs" style="width: 60px"></i>Definición</a></li>
+                            {% endif %}
+                            {% if 'Ver Ejecuciones de Proyectos' in permisos %}
+                                <li><a href="/proyectos/ejecuciones/"><i class="far fa-play-circle" style="width: 60px"></i>Ejecucion</a></li>
+                            {% endif %}
+                        </ul>
+                    </div><!-- /gn-scroller -->
+                </nav>
+            </li>
+            <li id="polip"><a href="/">Poliproyectos</a></li>
+            <li class="gn-menu-usuario"> Usuario: {{ user }}</li>
+            <li id="log-out"><a href="/logout/"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+        </ul>
+        <ul class="gn-menu-main gn-menu-second" style="z-index: 1!important;;">
+            Direccion actual: <a href="/">Inicio</a>
+            {% for key,value in direccion.items %}
+                > <a href="{{ value.1 }}">{{ key }}</a>
+            {% endfor %}
+        </ul>
+    </div><!-- /container -->
+    <script>
+        new gnMenu( document.getElementById( 'gn-menu' ) );
+    </script>
+</body>
+</html>

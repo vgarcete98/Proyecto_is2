@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--css -->
+	<link rel="stylesheet" type="text/css" href="{% static '/css/base.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+    <script src="{% static '/js/fontawesome.js' %}"></script>
+    <script src="{% static '/js/brands.js' %}"></script>
+    <script src="{% static '/js/solid.js' %}"></script>
+    <script src="{% static '/js/regular.js' %}"></script>
+</head>
+<body>
+<div class="container">
+	<div class="d-flex justify-content-center h-100">
+		<div class="card">
+			<div class="card-header">
+				<h1>Iniciar sesión</h1>
+			</div>
+			<div class="card-body">
+				<form method="POST" onsubmit="">
+                    {% csrf_token %}
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-user"></i></span>
+						</div>
+						<input type="text" class="form-control" placeholder="usuario" name="username"/>
+
+					</div>
+					<div class="input-group form-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text"><i class="fas fa-key"></i></span>
+						</div>
+						<input type="password" class="form-control" placeholder="contraseña" name="password">
+					</div>
+                    <br><br>
+					<div class="form-group">
+						<input type="submit" value="Iniciar Sesión" class="btn float-right login_btn">
+					</div>
+				</form>
+			</div>
+            <div class="error-text">{{ error }}</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
