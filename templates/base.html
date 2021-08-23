@@ -38,13 +38,13 @@
                         <ul class="gn-menu">
                             <li>
                                 {% if 'Ver Usuarios' in permisos or 'Ver Roles' in permisos or 'Ver Proyectos' in permisos or 'Ver Clientes' in permisos %}
-                                <i class="far fa-address-card" style="width: 60px"></i>Administracion
+                                <i class="far fa-address-card" style="width: 60px"></i>Seguridad
                                 <ul class="gn-submenu">
                                     {% if 'Ver Usuarios' in permisos %}
-                                        <li><a href="/usuarios/"><i class="fas fa-arrow-right" style="width: 60px"></i>Usuarios</a></li>
+                                        <li><a href="{% url 'user_list'%}"><i class="fas fa-arrow-right" style="width: 60px"></i>Usuarios</a></li>
                                     {% endif %}
                                     {% if 'Ver Roles' in permisos %}
-                                        <li><a href="/roles/"><i class="fas fa-arrow-right" style="width: 60px"></i>Roles</a></li>
+                                        <li><a href="{% url 'rol_list'%}"><i class="fas fa-arrow-right" style="width: 60px"></i>Roles</a></li>
                                     {% endif %}
                                     {% if 'Ver Proyectos' in permisos %}
                                         <li><a href="/proyectos/"><i class="fas fa-arrow-right" style="width: 60px"></i>Proyectos</a></li>

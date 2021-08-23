@@ -26,11 +26,14 @@ INSERT INTO usuarios_usuario_user_permissions VALUES (23,1,23);
 INSERT INTO usuarios_usuario_user_permissions VALUES (24,1,24);
 INSERT INTO usuarios_usuario_user_permissions VALUES (25,1,25);
 
-
-----------TABLA PERMISOS------------
+----------TABLA ROL_PERMISOS------------
 INSERT INTO rol_permiso VALUES (1,"Crear Usuarios",1);
 INSERT INTO rol_permiso VALUES (2,"Modificar Usuarios",1);
 INSERT INTO rol_permiso VALUES (3,"Ver Usuarios",1);
+
+INSERT INTO rol_permiso VALUES (4,"Ver Roles",1);
+INSERT INTO rol_permiso VALUES (5,"Crear Roles",1);
+INSERT INTO rol_permiso VALUES (6,"Modificar Roles",1);
 
 
 -----------TABLA ROL_ROL----------
@@ -47,3 +50,7 @@ INSERT INTO rol_rol_permisos VALUES (3,1,3);
 INSERT INTO usuarios_usuario_permisos VALUES (1,1,1);
 INSERT INTO usuarios_usuario_permisos VALUES (2,1,2);
 INSERT INTO usuarios_usuario_permisos VALUES (3,1,3);
+INSERT INTO usuarios_usuario_permisos VALUES (4,1,4);
+INSERT INTO usuarios_usuario_permisos VALUES (5,1,5);
+INSERT INTO usuarios_usuario_permisos VALUES (6,1,6);
+

@@ -15,7 +15,7 @@
                     <th width="39%">Nombre</th>
                     <th width="10%">Estado</th>
                     <th width="8%">Acciones</th>
-                    <th width="3%"><a href="/usuarios/create/">
+                    <th width="3%"><a href="{% url 'create_user'%}">
                         {% if 'Crear Usuarios' in permisos %}
                             <i class="fas fa-plus-square"></i></a>
                         {% endif %}

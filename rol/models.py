@@ -30,7 +30,8 @@ class Rol(models.Model):
     is_unique = models.BooleanField(verbose_name='Es único en el proyecto', default=False)
     nombre = models.CharField(max_length=50, unique=True, blank=False, null=False)
     descripcion = models.TextField(blank=True, null=True)
-    permisos = models.ManyToManyField('Permiso', blank=False)
+   # permisos = models.ManyToManyField('Permiso', blank=False)
+    permisos = models.ManyToManyField('rol.Permiso', blank=False)
 
     def __str__(self):
         """
@@ -38,3 +39,16 @@ class Rol(models.Model):
         :return: retorna el valor del campo nombre del objeto
         """
         return self.nombre
+
+    def get_nombres_permisos(self, proyecto=None):
+        """
+        Metodo que retorna todos los permisos del usuario, con contexto de proyecto o sin
+        :param proyecto: Proyecto para el que se solicitan los permisos de usuario segun el rol
+        :return: La lista de todos los permisos de administracion mas los permisos del proyecto
+                proporcionado o solo los permisos de administracion si no se proporciona proyecto
+        """
+        permisos = []
+            
+        for permiso in Permiso.objects.all():
+            permisos.append(permiso.nombre)
+        return permisos

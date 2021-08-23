@@ -48,7 +48,7 @@ class CreateUserView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
     template_name = 'usuarios/user.html'
     model = Usuario
-    success_url = '/usuarios/'
+    success_url = '/usuarios/user_list'
     form_class = CreateUserForm
     success_message = 'Se ha creado el usuario'
 
