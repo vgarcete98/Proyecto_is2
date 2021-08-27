@@ -39,12 +39,12 @@ class Usuario(AbstractUser):
                 proporcionado o solo los permisos de administracion si no se proporciona proyecto
         """
         permisos = []
-        if self.is_superuser:
-            
-            for permiso in Permiso.objects.all():
-                permisos.append(permiso.nombre)
+       # if self.is_superuser:
+               
+        for permiso in Permiso.objects.all():
+            permisos.append(permiso.nombre)
             rol_usuario = None
             if rol_usuario:
-                    for rol in rol_usuario.permisos.all():
-                        permisos.append(rol.nombre)
+                for rol in rol_usuario.permisos.all():
+                    permisos.append(rol.nombre)
         return permisos

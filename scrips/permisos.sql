@@ -30,20 +30,29 @@ INSERT INTO usuarios_usuario_user_permissions VALUES (25,1,25);
 INSERT INTO rol_permiso VALUES (1,"Crear Usuarios",1);
 INSERT INTO rol_permiso VALUES (2,"Modificar Usuarios",1);
 INSERT INTO rol_permiso VALUES (3,"Ver Usuarios",1);
-
 INSERT INTO rol_permiso VALUES (4,"Ver Roles",1);
 INSERT INTO rol_permiso VALUES (5,"Crear Roles",1);
 INSERT INTO rol_permiso VALUES (6,"Modificar Roles",1);
+INSERT INTO rol_permiso VALUES (7,"Crear Proyectos",2);
+INSERT INTO rol_permiso VALUES (8,"Modificar Proyectos",2);
+INSERT INTO rol_permiso VALUES (9,"Ver Proyectos",2);
 
 
 -----------TABLA ROL_ROL----------
 INSERT INTO rol_rol VALUES (1, false, "Administrador", "Administra los usuarios del sistema");
+INSERT INTO rol_rol VALUES (2, false, "Administrador del Proyecto", "Administra todo lo referente al proyecto");
 
 
 ----------TABLA ROL_ROL_PERMISOS-----------
 INSERT INTO rol_rol_permisos VALUES (1,1,1);
 INSERT INTO rol_rol_permisos VALUES (2,1,2);
 INSERT INTO rol_rol_permisos VALUES (3,1,3);
+INSERT INTO rol_rol_permisos VALUES (4,1,4);
+INSERT INTO rol_rol_permisos VALUES (5,1,5);
+INSERT INTO rol_rol_permisos VALUES (6,1,6);
+INSERT INTO rol_rol_permisos VALUES (7,2,7);
+INSERT INTO rol_rol_permisos VALUES (8,2,8);
+INSERT INTO rol_rol_permisos VALUES (9,2,9);
 
 
 ----------TABLA USUARIOS_PERMISOS---------
