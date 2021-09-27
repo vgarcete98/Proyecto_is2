@@ -1,7 +1,7 @@
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
 body {
-	background: #34495e!important;;
+	background: #3377FF!important;;
 }
 
 .container > header{
@@ -17,7 +17,7 @@ body {
 }
 
 .container > header a {
-	color: #566473;
+	color: #3377FF;
 	text-decoration: none;
 	outline: none;
 }

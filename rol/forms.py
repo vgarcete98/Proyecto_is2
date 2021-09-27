@@ -36,6 +36,7 @@ class CreateRolForm(forms.ModelForm):
         """
         super(CreateRolForm, self).__init__(*args, **kwargs)
         permisos_all = Permiso.objects.filter(tipo=2)
+        #permisos_all = Permiso.objects.all()
         p = self.fields['permisos'].widget
         permisos = []
         for permiso in permisos_all:
@@ -77,6 +78,7 @@ class UpdateRolForm(forms.ModelForm):
         """
         super(UpdateRolForm, self).__init__(*args, **kwargs)
         permisos_all = Permiso.objects.filter(tipo=2)
+        #permisos_all = Permiso.objects.all()
         p = self.fields['permisos'].widget
         permisos = []
         for permiso in permisos_all:
