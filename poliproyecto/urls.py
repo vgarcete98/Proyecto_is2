@@ -18,7 +18,9 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls import static
 from accounts.views import login, logout
+from userstory.views import ver_archivo
 from . import views
+from django.conf.urls import include, url
 
 urlpatterns = [
     path('', views.home),
@@ -30,4 +32,6 @@ urlpatterns = [
     path('usuarios/', include('usuarios.urls')),
     path('roles/', include('rol.urls')),
     path('proyectos/', include('proyecto.urls')),
+    path('clientes/',include('clientes.urls')),
+    path(route='media/<int:archivo_id>/', view=ver_archivo, name='ver_archivo')
 ]

@@ -48,7 +48,7 @@ class CreateRolView(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
     template_name = 'rol/rol.html'
     model = Rol
-    success_url = '/roles/'
+    success_url = '/roles/rol_list'
     form_class = CreateRolForm
     success_message = 'Se ha creado el rol'
 
@@ -103,7 +103,7 @@ class UpdateRolView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'rol/rol.html'
     model = Rol
     form_class = UpdateRolForm
-    success_url = '/roles/'
+    success_url = '/roles/rol_list'
     success_message = 'Los cambios se guardaron correctamente'
 
     def get(self,request,*args,**kwargs):

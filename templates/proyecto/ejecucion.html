@@ -7,7 +7,7 @@
         <h3 style="text-align: center">Proyecto: {{ project.nombre }}</h3>
     </div>
     <div class="body" style="">
-        {% if 'Ver Definiciones de Proyecto' in permisos %}
+        {% if 'Ver Definiciones de Proyectos' in permisos %}
         <a href="{% url 'update_options' object.pk %}" style="color: white;margin-left: 50em">
             <button type="button" class="btn btn-success">
                 Ir a Definición
@@ -49,11 +49,11 @@
                     {% endif %}
                 </li>
                 {% endif %}
-                <li>
+                {% comment %} <li>
                 <a target="_blank" href="{% url 'horas_trabajadas' object.pk%}">
                 <i class="fas fa-file-pdf"></i> Horas Trabajadas</button>
                 </a>
-                </li>
+                </li> {% endcomment %}
                 <br>
                 <div class="container" align="right">
                     <form method="POST" style="display: inline">
@@ -114,7 +114,7 @@
                     <a href="{% url 'user_story_list' object.pk %}">Administrar User Stories</a>
                 </li>
                 {% endif %}
-                {% if 'Ver Product Backlog' in permisos %}
+                {% if 'Ver Product ' in permisos %}
                 <li>
                     <a href="{% url 'product_backlog' object.pk%}">Product Backlog</a>
                 </li>
@@ -203,12 +203,12 @@
             {% endif %}
             {% if sprint_pendiente %}
             {% if 'Iniciar Sprints' in permisos %}
-            <div class="modal-footer">
+            <div class="modal-footer" id="test model">
                 <form method="POST">
                     {% csrf_token %}
-                    <button type="submit" class="btn btn-success">
+                    <a href="./sprints/"><button type="submit" class="btn btn-success" onclick="$('#testModal').hide()">
                         <i class="far fa-play-circle"></i> Iniciar Sprint
-                    </button>
+                    </button></a>
                     <input type="hidden" name="iniciar_sprint" value="{{ sprint_pendiente.pk }}">
                 </form>
             </div>
@@ -285,9 +285,9 @@
                 <form method="POST">
                     {% csrf_token %}
                     <input name="conf_terminar" type="hidden" value={{ sprint_actual.pk }}>
-                    <button type="submit" class="btn btn-success">
+                    <a href="{% url 'sprint_list' object.pk %}"><button type="submit" class="btn btn-success">
                         <i class="fas fa-stop-circle"></i> Terminar Sprint
-                    </button>
+                    </button></a>
                 </form>
             </div>
         </div>
