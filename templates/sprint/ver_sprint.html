@@ -94,10 +94,10 @@
                 </tbody>
             </table>
         {% endif %}
-        {% if sprint.estado != 'Pendiente' %}
+       {% comment %}  {% if sprint.estado != 'Pendiente' %}
                 <hr><h4 style="text-align: center;">Burn Down Chart</h4><hr>
                 <svg id="visualisation" width="800" height="600" class="chart"></svg>
-        {% endif %}<br>
+        {% endif %}<br> {% endcomment %}
         <a href="../../"><button type="button" class="btn submit-btn">
             <i class="fas fa-arrow-left"></i> Atras</button></a>
         <hr>

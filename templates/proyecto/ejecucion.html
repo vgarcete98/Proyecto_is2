@@ -206,7 +206,7 @@
             <div class="modal-footer" id="test model">
                 <form method="POST">
                     {% csrf_token %}
-                    <a href="./sprints/"><button type="submit" class="btn btn-success" onclick="$('#testModal').hide()">
+                    <a href="{% url 'sprint_list' object.pk %}"><button type="submit" class="btn btn-success" onclick="$('#testModal').hide()">
                         <i class="far fa-play-circle"></i> Iniciar Sprint
                     </button></a>
                     <input type="hidden" name="iniciar_sprint" value="{{ sprint_pendiente.pk }}">
@@ -238,12 +238,12 @@
             </div>
             <div class="modal-footer">
                 <form method="POST">
-                    {% if sprint_actual %}
+                    {% comment %} {% if sprint_actual %}
                         <a target="_blank" href="{% url 'prioridades' project.pk sprint_actual.pk%}">
                             <button type="button" class="btn btn-success">
                                 <i class="fas fa-file-pdf"></i> Prioridades del Sprint</button>
                         </a>
-                    {% endif %}
+                    {% endif %} {% endcomment %}
                     {% csrf_token %}
                     <input type="hidden" name="terminar_sprint" value="{{ sprint_actual.pk }}">
                     <button type="submit" class="btn btn-success">

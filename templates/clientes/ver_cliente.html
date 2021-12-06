@@ -17,9 +17,9 @@
         </div>
         <hr><h4 style="text-align: center;">Proyectos del Cliente</h4><hr>
             <a target="_blank" href="{% url 'reporte_cl' cliente.pk %}">
-            <button type="button" class="btn btn-success">
+            {% comment %} <button type="button" class="btn btn-success">
                 <i class="fas fa-file-pdf"></i> Exportar a PDF</button>
-            </a>
+            </a> {% endcomment %}
             <table class="table table-sm scrolltable" width="100%">
                 <thead class="thead-dark thead">
                     <tr>

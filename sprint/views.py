@@ -213,7 +213,7 @@ class UpdateSprintView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
     template_name = 'sprint/sprint.html'
     model = Sprint
     form_class = UpdateSprintForm
-    success_url = '../../'
+    #success_url = '../../'
     success_message = 'Los cambios se guardaron correctamente'
 
     def get(self, request, *args, **kwargs):
